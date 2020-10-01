@@ -1,7 +1,7 @@
 package usc.ac.ir;
 
 public class Integer implements MyInteger{
-    public static int  newInt;
+     static int newInt;
 
     @Override
     public void isEven( int integer) {
