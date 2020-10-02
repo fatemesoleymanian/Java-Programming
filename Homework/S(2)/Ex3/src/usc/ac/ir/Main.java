@@ -2,7 +2,7 @@ package usc.ac.ir;
 
 import java.util.Scanner;
 
-public class Main extends Integer{
+public class Main {
 
     public static void main(String[] args) {
 
@@ -10,19 +10,19 @@ public class Main extends Integer{
 
         System.out.println("please enter an integer .");
 
-        newInt=scanner.nextInt();
+        Integer.newInt=scanner.nextInt();
 
         MyInteger integer=new Integer();
 
         System.out.println("this integer is :");
 
-        integer.isEven(newInt);
-        integer.isOdd(newInt);
+        integer.isEven(Integer.newInt);
+        integer.isOdd(Integer.newInt);
 
-        integer.isNegative(newInt);
-        integer.isPositive(newInt);
+        integer.isNegative(Integer.newInt);
+        integer.isPositive(Integer.newInt);
 
-        integer.isZero(newInt);
+        integer.isZero(Integer.newInt);
 
 
 
