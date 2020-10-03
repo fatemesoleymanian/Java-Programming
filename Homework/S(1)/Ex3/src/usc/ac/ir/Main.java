@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner scanner=new Scanner(System.in);
 
         System.out.println("plz enter zarib X & Y in 'Cx + Dy = f'");
@@ -19,10 +19,12 @@ public class Main {
         eq.e=Integer.parseInt(scanner.nextLine());
 
 
+        try {
+            eq.answer();
+        }catch (ArithmeticException e){
+            System.out.println(Exceptionfactory.ExceptionHandling(e));
+        }
 
-        eq.answer();
-        eq.x=((eq.e * eq.zy1) -(eq.zy2*eq.f))/((eq.zx2*eq.zy1)-(eq.zy2*eq.zx1));
-        eq.y=((eq.f*eq.zx2)-(eq.e*eq.zx1))/((eq.zx2*eq.zy1)-(eq.zy2*eq.zx1));
 
     }
 }

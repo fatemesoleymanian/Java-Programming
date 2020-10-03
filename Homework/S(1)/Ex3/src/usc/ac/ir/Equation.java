@@ -10,16 +10,20 @@ public class Equation {
     public float x;
     public float y;
 
-    public void answer(){
-        if((zx2*zy1)-(zx1*zy2)!=0){
-            System.out.println("X equals :" + x);
-            System.out.println("Y equals :" + y);
+    public void answer() {
 
-        }
+        x=((e * zy1) -(zy2*f))/((zx2*zy1)-(zy2*zx1));
+        y=((f*zx2)-(e*zx1))/((zx2*zy1)-(zy2*zx1));
 
-        else {
-            System.out.println("this mathematic equation has no answer!");
-        }
+        System.out.println("X equals :" + x);
+        System.out.println("Y equals :" + y);
+
+
+
+
+
+
+
 
 
     }
