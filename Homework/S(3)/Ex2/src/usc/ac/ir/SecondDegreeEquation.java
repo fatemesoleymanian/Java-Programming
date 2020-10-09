@@ -33,9 +33,9 @@ SecondDegreeEquation(){
     x2= (float) ((-(this.B)-Math.sqrt(delta))/2*this.A);
 
 
-    if (x1==x2) throw new ArithmeticException("this equation has only one answer . x :"+" "+x1);
+    if (x1==x2) System.out.println("this equation has only one answer . x :"+" "+x1);
 
-else throw new ArithmeticException("x1 :" + x1+"\n"+"x2 :" + x2);
+else System.out.println("x1 :" + x1+"\n"+"x2 :" + x2);
 
     }
 }
