@@ -1,5 +1,7 @@
 package usc.ac.ir;
 
+import java.util.InputMismatchException;
+
 public class UserInfo {
     private String userName;
     private String userRealName;
@@ -58,7 +60,7 @@ public class UserInfo {
         return phoneNumber;
     }
 
-    public UserInfo setPhoneNumber(long phoneNumber) {
+    public UserInfo setPhoneNumber(long phoneNumber) throws InputMismatchException {
         this.phoneNumber = phoneNumber;
         return this;
     }
