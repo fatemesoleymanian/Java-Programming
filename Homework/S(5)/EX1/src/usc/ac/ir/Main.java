@@ -7,28 +7,24 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
 
-        System.out.print("UserName:");
-        String name=scanner.nextLine();
+        System.out.print("UserName:\t\t");
 
-        System.out.print("User Real Name:");
-        String realName=scanner.nextLine();
 
-        System.out.print("Password:");
-        String password=scanner.nextLine();
+        System.out.print("User Real Name:\t\t");
 
-        System.out.print("Age:");
-        int age=scanner.nextInt();
 
-        System.out.print("Address:");
-        String address=scanner.next();
+        System.out.print("Password:\t\t");
 
-        System.out.print("Phone Number:");
-        long phoneNumber=scanner.nextLong();
 
-        System.out.print("Education:");
-        String education=scanner.next();
+        System.out.print("Age:\t\t");
+        System.out.print("Address:\t\t");
 
-        UserInfo userInfo=new UserInfo().setUserName(name).setUserRealName(realName).setPassword(password).setAge(age).setPhoneNumber(phoneNumber).setAddress(address).setEducation(education);
+        System.out.print("Phone Number:\t\t");
+
+        System.out.print("Education:\n");
+
+
+        UserInfo userInfo=new UserInfo().setUserName(scanner.nextLine()).setUserRealName(scanner.nextLine()).setPassword(scanner.nextLine()).setAge(scanner.nextInt()).setPhoneNumber(scanner.nextLong()).setAddress(scanner.next()).setEducation(scanner.next());
 
         System.out.println("Information Saved . . .");
 
