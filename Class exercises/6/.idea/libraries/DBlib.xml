@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DBlib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../pishrafte/code/DBlib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
