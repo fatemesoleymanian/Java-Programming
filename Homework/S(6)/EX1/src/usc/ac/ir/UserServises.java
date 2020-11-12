@@ -19,22 +19,35 @@ public class UserServises {
             Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hanie",
                     "hjh79");
             PreparedStatement preparedStatement =
-                    connection.prepareStatement("insert into UserServises (user_code,user_name,e-mail,password,age,education) values (?,?,?,?,?,?)");
-            //set user_code as primary key
-            //mn bayad bedam be user chon primarie!
+                    connection.prepareStatement("insert into UserServices (user_name,e-mail,password,age,education) values (?,?,?,?,?)");
 
-            preparedStatement.setLong(1, this.userCode);
             System.out.println("user name :");
-            preparedStatement.setString(2, scanner.next());
+            this.userName=scanner.next();
+            preparedStatement.setString(1,this.userName );
             System.out.println("email :");
-            preparedStatement.setString(3, scanner.next());
+            this.email=scanner.next();
+            preparedStatement.setString(2,this.email );
             System.out.println("password :");
-            preparedStatement.setString(4, scanner.next());
+            this.password=scanner.next();
+            preparedStatement.setString(3,this.password );
             System.out.println("age :");
-            preparedStatement.setInt(5, scanner.nextInt());
+            this.age=scanner.nextInt();
+            preparedStatement.setInt(4,this.age );
             System.out.println("education :");
-            preparedStatement.setString(6, scanner.nextLine());
+            this.education=scanner.nextLine();
+            preparedStatement.setString(5,this.education );
             preparedStatement.executeUpdate();
+            PreparedStatement preparedStatement2 =
+                    connection.prepareStatement("select user_code from UserServices where user_name=? ,password=? ,e-mail=? ,age=? ,education=?");
+
+            preparedStatement2.setString(1,this.userName );
+            preparedStatement2.setString(2,this.password );
+            preparedStatement2.setString(3, this.email);
+            preparedStatement2.setInt(4, this.age);
+            preparedStatement2.setString(5, this.education);
+
+            ResultSet resultSet = preparedStatement2.executeQuery();
+            this.userCode=resultSet.getLong("user_code");
             preparedStatement.close();
             connection.close();
             System.out.println("You Successfully Signed up!");
@@ -69,7 +82,7 @@ public class UserServises {
             Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hanie",
                     "hjh79");
             PreparedStatement preparedStatement =
-                    connection.prepareStatement("update UsersServises set user_name=? ,e-mai=? ,password=? ,age=? ,education=? where user_code=?");
+                    connection.prepareStatement("update UsersServices set user_name=? ,e-mai=? ,password=? ,age=? ,education=? where user_code=?");
 
             preparedStatement.setString(1, this.userName);
 
@@ -86,7 +99,7 @@ public class UserServises {
             preparedStatement.executeUpdate();
             preparedStatement.close();
             connection.close();
-            System.out.println("You Successfully Signed up!");
+            System.out.println("your information has been updated!");
         } catch (ClassNotFoundException e)
         {
             System.out.println("DB Driver Not Exist!!");
@@ -102,7 +115,7 @@ public class UserServises {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hanie",
                     "hjh79");
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from UserServises where user_code=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from UserServices where user_code=?");
             preparedStatement.setLong(1,this.userCode);
             ResultSet resultSet = preparedStatement.executeQuery();
             System.out.println("user code: "+resultSet.getLong("user_code"));
