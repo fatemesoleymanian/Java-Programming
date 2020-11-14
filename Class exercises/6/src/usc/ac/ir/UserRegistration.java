@@ -32,7 +32,7 @@ public class UserRegistration {
             preparedStatement1.executeUpdate();
 
             PreparedStatement preparedStatement2 =
-                    connection.prepareStatement("select user_name from UserAccounts where name=? ,password=? ,e-mail=? ");
+                    connection.prepareStatement("select user_name from UserAccounts where name=? and password=? and e-mail=? ");
 
             preparedStatement2.setString(1,this.name );
             preparedStatement2.setString(2,this.password );

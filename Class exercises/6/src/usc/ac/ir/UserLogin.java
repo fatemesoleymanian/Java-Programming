@@ -20,7 +20,7 @@ public class UserLogin {
         try (Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hanie",
                 "hjh79")) {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from UsersAccounts where user_name=? , pasword=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from UsersAccounts where user_name=? and pasword=?");
             preparedStatement.setString(1, this.user_name);
             preparedStatement.setString(2, this.password);
             ResultSet resultSet = preparedStatement.executeQuery();//??SQL exception? or class
