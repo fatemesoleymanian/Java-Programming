@@ -38,7 +38,7 @@ public class UserServises {
             preparedStatement.setString(5,this.education );
             preparedStatement.executeUpdate();
             PreparedStatement preparedStatement2 =
-                    connection.prepareStatement("select user_code from UserServices where user_name=? ,password=? ,e-mail=? ,age=? ,education=?");
+                    connection.prepareStatement("select user_code from UserServices where user_name=? and password=? and e-mail=? and age=? and education=?");
 
             preparedStatement2.setString(1,this.userName );
             preparedStatement2.setString(2,this.password );
