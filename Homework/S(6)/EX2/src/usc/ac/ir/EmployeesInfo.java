@@ -62,7 +62,7 @@ public class EmployeesInfo extends Employees{
             preparedStatement.executeUpdate();
 
             PreparedStatement preparedStatement2 =
-                    connection.prepareStatement("select code from employees where national_code=? ,father_name=? ,name=? ,career_position=? ,salary=? ,work_experience=?");
+                    connection.prepareStatement("select code from employees where national_code=? and father_name=? and name=? and career_position=? and salary=? and work_experience=?");
             preparedStatement2.setLong(1, (Long) nationalCode);
             preparedStatement2.setString(2, (String) fathername);
             preparedStatement2.setString(3, (String) name);
