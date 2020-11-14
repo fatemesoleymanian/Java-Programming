@@ -1,6 +1,6 @@
 package usc.ac.ir;
 
-public  abstract class Employees<EMPCODE,EMPNC,EMPNAME,SALARY,FATHERNAME,WORKEXPERIENCE,CAREERPOSITION> {
+public class Employees<EMPCODE,EMPNC,EMPNAME,SALARY,FATHERNAME,WORKEXPERIENCE,CAREERPOSITION> {
     public EMPCODE code;
     public EMPNC nationalCode;
     public EMPNAME name;
@@ -10,7 +10,5 @@ public  abstract class Employees<EMPCODE,EMPNC,EMPNAME,SALARY,FATHERNAME,WORKEXP
     public CAREERPOSITION careerposition;
 
 
-    public void showInfo(){}
-    public void getInfo(){}
-    public void deleteInfo(){}
+
 }

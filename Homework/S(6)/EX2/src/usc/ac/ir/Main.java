@@ -11,7 +11,7 @@ public class Main {
 
         int answer=Integer.parseInt(scanner.nextLine());
 
-        Employees employees=new EmployeesInfo();
+        EmployeesInfo employees=new EmployeesInfo();
 
         switch (answer)
         {
@@ -21,7 +21,7 @@ public class Main {
                 break;
             case 2:
                 employees.deleteInfo();
-                employees.showInfo();
+
 
         }
 
