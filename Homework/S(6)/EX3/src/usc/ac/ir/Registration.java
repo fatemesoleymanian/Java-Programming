@@ -35,7 +35,7 @@ public class Registration extends Student{
 
             preparedStatement.executeUpdate();
             PreparedStatement preparedStatement2 =
-                    connection.prepareStatement("select code from Students where name=? ,year_of_entrance=? ,average_score=? ");
+                    connection.prepareStatement("select code from Students where name=? and year_of_entrance=? and average_score=? ");
 
             preparedStatement2.setString(1,getStName() );
             preparedStatement2.setInt(2,getEntYear() );
