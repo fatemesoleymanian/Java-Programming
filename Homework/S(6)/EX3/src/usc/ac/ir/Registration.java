@@ -16,43 +16,38 @@ public class Registration extends Student{
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hanie",
-                    "hjh79");
+                    "h13");
+            connection.setAutoCommit (false);
             PreparedStatement preparedStatement =
-                    connection.prepareStatement("insert into Students (name,year_of_entrance,average_score) values (?,?,?)");
+                    connection.prepareStatement("insert into Students (user_code,name,year_of_entrance,average_score) values (?,?,?,?)");
             //code is key
-
+            System.out.println("user code :");
+            setStCode(scanner.nextLong());
+            preparedStatement.setLong(1,getStCode() );
             System.out.println("full name :");
-            setStName(scanner.nextLine());
-            preparedStatement.setString(1,getStName() );
+            setStName(scanner.next());
+            preparedStatement.setString(2,getStName() );
 
             System.out.println("year of entrance :");
             setEntYear(scanner.nextInt());
-            preparedStatement.setInt(2,getEntYear() );
+            preparedStatement.setInt(3,getEntYear() );
 
             System.out.println("average score :");
             setAverage(scanner.nextFloat());
-            preparedStatement.setFloat(3,getAverage() );
+            preparedStatement.setFloat(4,getAverage() );
 
             preparedStatement.executeUpdate();
-            PreparedStatement preparedStatement2 =
-                    connection.prepareStatement("select code from Students where name=? and year_of_entrance=? and average_score=? ");
 
-            preparedStatement2.setString(1,getStName() );
-            preparedStatement2.setInt(2,getEntYear() );
-            preparedStatement2.setFloat(3, getAverage());
-
-            ResultSet resultSet = preparedStatement2.executeQuery();
-            setStCode(resultSet.getLong("user_code"));
             System.out.println("are you sure to save?(y/n)");
             String option=scanner.next();
-            if(option.equals("y"))   System.out.println("Your information has been saved!");
+            if(option.equals("y")) {  System.out.println("Your information has been saved!"); super.showInfo();}
             if(option.equals("n"))   connection.rollback();
-
+            connection.commit();
             preparedStatement.close();
             connection.close();
         } catch (ClassNotFoundException e)
         {
-            System.out.println("DB Driver Not Exist!!");//not found the user?
+            System.out.println("DB Driver Not Exist!!");
         } catch (SQLException e)
         {
             System.out.println("DB ERROR " + e.getMessage());

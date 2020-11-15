@@ -1,6 +1,6 @@
 package usc.ac.ir;
 
-import java.sql.ResultSet;
+
 import java.util.Scanner;
 
 public class Main  {
@@ -17,7 +17,7 @@ public class Main  {
                 Registration registration=new Registration();
 
                 registration.getInfo();
-                registration.showInfo();
+
                 break;
             case 2:
                 Delete delete=new Delete();
@@ -42,6 +42,8 @@ public class Main  {
             Print print = new Print();
         }
 
-            if (ans==2) return;
+            else if (ans==2) return;
+            else System.out.println("wrong answer.");
+
     }
 }

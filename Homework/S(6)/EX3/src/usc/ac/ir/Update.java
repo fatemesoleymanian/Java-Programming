@@ -17,18 +17,19 @@ public class Update extends Student{
 
         System.out.println("WHICH ONE DO YOU WANT TO UPDATE ?");
         System.out.println("1.your name\n2.the year of your entrance\n3.average of your scores\n4.all");
-        int ans = Integer.parseInt(scanner.nextLine());
+        int ans = scanner.nextInt();
 
         switch (ans)
         {
             case 1:
 
                 try (Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hanie",
-                        "hjh79")) {
+                        "h13")) {
                     Class.forName("oracle.jdbc.driver.OracleDriver");
-                    PreparedStatement preparedStatement = connection.prepareStatement("update Students set name=? where code=? ");
+                    connection.setAutoCommit (false);
+                    PreparedStatement preparedStatement = connection.prepareStatement("update Students set name=? where user_code=? ");
                     System.out.println("enter the replace name :");
-                    setStName(scanner.nextLine());
+                    setStName(scanner.next());
                     preparedStatement.setString(1, getStName());
                     preparedStatement.setLong(2, getStCode());
                     preparedStatement.executeUpdate();
@@ -38,9 +39,10 @@ public class Update extends Student{
                         System.out.println("your name has been updated!!");
 
                     if (option.equals("n")) connection.rollback();
+                    connection.commit();
                     preparedStatement.close();
                     connection.close();
-                } catch (ClassNotFoundException e)// if no lib files are added
+                } catch (ClassNotFoundException e)
                 {
                     System.out.println("DB Driver Not Exist!!");
                 } catch (SQLException e) {
@@ -49,9 +51,10 @@ public class Update extends Student{
                 break;
             case 2:
                 try (Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hanie",
-                        "hjh79")) {
+                        "h13")) {
                     Class.forName("oracle.jdbc.driver.OracleDriver");
-                    PreparedStatement preparedStatement = connection.prepareStatement("update Students set year_of_entrance=?  where code=? ");
+                    connection.setAutoCommit (false);
+                    PreparedStatement preparedStatement = connection.prepareStatement("update Students set year_of_entrance=?  where user_code=? ");
                     System.out.println("enter the replace year :");
                     setEntYear(scanner.nextInt());
                     preparedStatement.setInt(1, getEntYear());
@@ -63,9 +66,10 @@ public class Update extends Student{
                         System.out.println("the year of your entrance has been updated!!");
 
                     if (option.equals("n")) connection.rollback();
+                    connection.commit();
                     preparedStatement.close();
                     connection.close();
-                } catch (ClassNotFoundException e)// if no lib files are added
+                } catch (ClassNotFoundException e)
                 {
                     System.out.println("DB Driver Not Exist!!");
                 } catch (SQLException e) {
@@ -74,9 +78,10 @@ public class Update extends Student{
                 break;
             case 3:
                 try (Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hanie",
-                        "hjh79")) {
+                        "h13")) {
                     Class.forName("oracle.jdbc.driver.OracleDriver");
-                    PreparedStatement preparedStatement = connection.prepareStatement("update Students set average_score=? where code=? ");
+                    connection.setAutoCommit (false);
+                    PreparedStatement preparedStatement = connection.prepareStatement("update Students set average_score=? where user_code=? ");
                     System.out.println("enter the replace average :");
                     setAverage(scanner.nextFloat());
                     preparedStatement.setFloat(1, getAverage());
@@ -88,9 +93,10 @@ public class Update extends Student{
                         System.out.println("the average of your scores has been deleted!!");
 
                     if (option.equals("n")) connection.rollback();
+                    connection.commit();
                     preparedStatement.close();
                     connection.close();
-                } catch (ClassNotFoundException e)// if no lib files are added
+                } catch (ClassNotFoundException e)
                 {
                     System.out.println("DB Driver Not Exist!!");
                 } catch (SQLException e) {
@@ -99,11 +105,12 @@ public class Update extends Student{
                 break;
             case 4:
                 try (Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hanie",
-                        "hjh79")) {
+                        "h13")) {
                     Class.forName("oracle.jdbc.driver.OracleDriver");
-                    PreparedStatement preparedStatement = connection.prepareStatement("update Students set name =? , year_of_entrance=? ,average_score=? where code=? ");
+                    connection.setAutoCommit (false);
+                    PreparedStatement preparedStatement = connection.prepareStatement("update Students set name =? , year_of_entrance=? ,average_score=? where user_code=? ");
                     System.out.println("enter the replace name :");
-                    setStName(scanner.nextLine());
+                    setStName(scanner.next());
                     preparedStatement.setString(1, getStName());
                     System.out.println("enter the replace year :");
                     setEntYear(scanner.nextInt());
@@ -119,6 +126,7 @@ public class Update extends Student{
                         System.out.println("your information have been updated !!!");
 
                     if (option.equals("n")) connection.rollback();
+                    connection.commit();
                     preparedStatement.close();
                     connection.close();
                 } catch (ClassNotFoundException e)// if no lib files are added

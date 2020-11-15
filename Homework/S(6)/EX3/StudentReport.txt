@@ -4,4 +4,4 @@ full name: null
 year of entrance: 0
 the score average: 0.0
 
-12-11-2020 14:05:20
+14-11-2020 20:28:45
