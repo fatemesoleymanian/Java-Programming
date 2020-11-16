@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class UserLogin {
     public String user_name;
-    public String password;
+    public long password;
     Scanner scanner=new Scanner(System.in);
 
     UserLogin(){
@@ -16,21 +16,21 @@ public class UserLogin {
         System.out.println("user_name :");
         this.user_name=scanner.nextLine();
         System.out.println("password :");
-        this.password=scanner.nextLine();
+        this.password=scanner.nextLong();
         try (Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hanie",
-                "hjh79")) {
+                "h13")) {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             PreparedStatement preparedStatement = connection.prepareStatement("select * from UsersAccounts where user_name=? and pasword=?");
             preparedStatement.setString(1, this.user_name);
-            preparedStatement.setString(2, this.password);
-            ResultSet resultSet = preparedStatement.executeQuery();//??SQL exception? or class
+            preparedStatement.setLong(2, this.password);
+            ResultSet resultSet = preparedStatement.executeQuery();
         }catch (ClassNotFoundException e)
         {
             System.out.println("DB Driver Not Exist!!");
 
         } catch (SQLException e)
         {
-            System.out.println("You Haven't Registered Yet!!");
+            System.out.println("DB ERROR " + e.getMessage());
 
         }
 
@@ -38,16 +38,18 @@ public class UserLogin {
     public void showInfo(){
 
         try (Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hanie",
-                "hjh79")) {
+                "h13")) {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             PreparedStatement preparedStatement = connection.prepareStatement("select * from UsersAccounts where user_name=?");
             preparedStatement.setString(1, user_name);
             ResultSet resultSet = preparedStatement.executeQuery();
-            System.out.println("You Have Successfully Login !");
-            System.out.println("name: "+resultSet.getString("name"));
-            System.out.println("password: "+resultSet.getString("password"));
-            System.out.println("user_name: "+resultSet.getString("user_name"));
-            System.out.println("e-mail: "+resultSet.getString("e-mail"));
+            while (resultSet.next()) {
+                System.out.println("You Have Successfully Login !");
+                System.out.println("name: " + resultSet.getString("name"));
+                System.out.println("password: " + resultSet.getLong("password"));
+                System.out.println("user_name: " + resultSet.getString("user_name"));
+                System.out.println("e-mail: " + resultSet.getString("email"));
+            }
 
 
         } catch (ClassNotFoundException e)
@@ -56,7 +58,7 @@ public class UserLogin {
 
         } catch (SQLException e)
         {
-            System.out.println("You Haven't Registered Yet!!");
+            System.out.println("DB ERROR " + e.getMessage());
 
         }
 
