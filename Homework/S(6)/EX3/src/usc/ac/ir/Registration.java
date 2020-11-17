@@ -40,7 +40,7 @@ public class Registration extends Student{
 
             System.out.println("are you sure to save?(y/n)");
             String option=scanner.next();
-            if(option.equals("y")) {  System.out.println("Your information has been saved!"); super.showInfo();}
+            if(option.equals("y")) {  System.out.println("Your information has been saved!"); }
             if(option.equals("n"))   connection.rollback();
             connection.commit();
             preparedStatement.close();

@@ -129,7 +129,7 @@ public class Update extends Student{
                     connection.commit();
                     preparedStatement.close();
                     connection.close();
-                } catch (ClassNotFoundException e)// if no lib files are added
+                } catch (ClassNotFoundException e)
                 {
                     System.out.println("DB Driver Not Exist!!");
                 } catch (SQLException e) {
