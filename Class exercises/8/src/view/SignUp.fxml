@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane opacity="0.74" prefHeight="440.0" prefWidth="419.0" style="-fx-background-color: #1E90FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SignUp">
+   <children>
+      <JFXTextField fx:id="txtUserName" focusColor="NAVY" layoutX="14.0" layoutY="134.0" opacity="0.91" prefHeight="31.0" prefWidth="174.0" promptText="User Name" unFocusColor="NAVY">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" focusColor="NAVY" layoutX="225.0" layoutY="134.0" opacity="0.91" prefHeight="31.0" prefWidth="167.0" promptText="Name" unFocusColor="NAVY">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtPass" focusColor="NAVY" layoutX="213.0" layoutY="256.0" opacity="0.91" prefHeight="31.0" prefWidth="184.0" promptText="Password " unFocusColor="NAVY">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXTextField fx:id="txtEmail" focusColor="NAVY" layoutX="16.0" layoutY="256.0" opacity="0.91" prefHeight="25.0" prefWidth="167.0" promptText="Email Address" unFocusColor="NAVY">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSignUp" layoutX="157.0" layoutY="332.0" onAction="#pressbTnSignUp" text="Sign Up !" textFill="NAVY" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="103.0" layoutY="58.0" text="Create An Account !" textFill="NAVY">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

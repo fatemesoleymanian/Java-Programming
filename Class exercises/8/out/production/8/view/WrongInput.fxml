@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+
+
+<DialogPane fx:id="WrongInDialoge" contentText="Please Try Again ." headerText="Wrong Input !!!" opacity="0.8" prefHeight="87.0" prefWidth="360.0" style="-fx-background-color: #1E90FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.WrongInput">
+   <buttonTypes>
+      <ButtonType fx:constant="CLOSE" />
+   </buttonTypes>
+   <effect>
+      <DropShadow>
+         <input>
+            <Blend />
+         </input>
+      </DropShadow>
+   </effect>
+   <padding>
+      <Insets bottom="5.0" left="15.0" right="5.0" top="15.0" />
+   </padding>
+</DialogPane>
