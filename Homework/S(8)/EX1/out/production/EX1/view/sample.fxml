@@ -75,9 +75,18 @@
                   <Font name="System Bold Italic" size="23.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtFiName" focusColor="IVORY" layoutX="166.0" layoutY="99.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY" />
-            <JFXTextField fx:id="txtLname" focusColor="IVORY" layoutX="169.0" layoutY="162.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY" />
-            <JFXTextField fx:id="txtFaName" focusColor="IVORY" layoutX="172.0" layoutY="236.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY" />
+            <JFXTextField fx:id="txtFiName" focusColor="IVORY" labelFloat="true" layoutX="166.0" layoutY="99.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="txtLname" focusColor="IVORY" labelFloat="true" layoutX="169.0" layoutY="162.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="txtFaName" focusColor="IVORY" labelFloat="true" layoutX="172.0" layoutY="236.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></JFXTextField>
             <JFXTextField fx:id="txtNc" focusColor="IVORY" layoutX="176.0" layoutY="312.0" prefHeight="25.0" prefWidth="185.0" unFocusColor="IVORY" />
             <JFXRadioButton fx:id="maleBtn" layoutX="176.0" layoutY="405.0" text="male" textFill="IVORY">
                <font>
