@@ -1,15 +1,16 @@
-package view;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXRadioButton;
-import com.jfoenix.controls.JFXTextField;
-import controller.ControllInfo;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.stage.Stage;
+        package view;
 
-public class EmploymentForm {
+        import com.jfoenix.controls.JFXButton;
+        import com.jfoenix.controls.JFXRadioButton;
+        import com.jfoenix.controls.JFXTextField;
+        import controller.ControllInfo;
+        import javafx.fxml.FXML;
+        import javafx.scene.control.Alert;
+        import javafx.scene.control.ToggleGroup;
+        import javafx.stage.Stage;
+
+        public class EmploymentForm {
 
     @FXML
     private JFXButton SubBtn;
@@ -30,10 +31,10 @@ public class EmploymentForm {
     private JFXRadioButton maleBtn;
 
     @FXML
-    private JFXRadioButton femaleBtn;
+    private ToggleGroup group;
 
     @FXML
-    private JFXTextField txtDate;
+    private JFXRadioButton femaleBtn;
 
     @FXML
     private JFXTextField txtEdu;
@@ -45,6 +46,11 @@ public class EmploymentForm {
     private JFXTextField txtPnum;
 
     @FXML
+    private JFXTextField txtDate;
+
+
+
+@FXML
 
     public void pressSubBtn(javafx.event.ActionEvent actionEvent) {
         if ( txtFiName.getText().compareTo("") == 0 || txtLname.getText().compareTo("") == 0 || txtFaName.getText().compareTo("")==0 ||txtEmail.getText().compareTo("")==0||txtDate.getText().compareTo("")==0||txtEdu.getText().compareTo("")==0||txtNc.getText().compareTo("")==0||txtPnum.getText().compareTo("")==0|| (femaleBtn.isSelected()==false && maleBtn.isSelected()==false)) {

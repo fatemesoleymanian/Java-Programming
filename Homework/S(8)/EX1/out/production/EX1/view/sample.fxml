@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -87,21 +88,39 @@
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font></JFXTextField>
-            <JFXTextField fx:id="txtNc" focusColor="IVORY" layoutX="176.0" layoutY="312.0" prefHeight="25.0" prefWidth="185.0" unFocusColor="IVORY" />
+            <JFXTextField fx:id="txtNc" focusColor="IVORY" layoutX="176.0" layoutY="312.0" prefHeight="25.0" prefWidth="185.0" unFocusColor="IVORY">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></JFXTextField>
             <JFXRadioButton fx:id="maleBtn" layoutX="176.0" layoutY="405.0" text="male" textFill="IVORY">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup>
             </JFXRadioButton>
-            <JFXRadioButton fx:id="femaleBtn" layoutX="290.0" layoutY="405.0" text="female" textFill="IVORY">
+            <JFXRadioButton fx:id="femaleBtn" layoutX="290.0" layoutY="405.0" text="female" textFill="IVORY" toggleGroup="$group">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
             </JFXRadioButton>
-            <JFXTextField fx:id="txtEdu" focusColor="IVORY" layoutX="173.0" layoutY="569.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY" />
-            <JFXTextField fx:id="txtEmail" focusColor="IVORY" layoutX="178.0" layoutY="644.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY" />
-            <JFXTextField fx:id="txtPnum" focusColor="IVORY" layoutX="178.0" layoutY="714.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY" />
-            <JFXTextField fx:id="txtDate" focusColor="IVORY" layoutX="176.0" layoutY="481.0" prefHeight="25.0" prefWidth="185.0" unFocusColor="IVORY" />
+            <JFXTextField fx:id="txtEdu" focusColor="IVORY" layoutX="173.0" layoutY="569.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="txtEmail" focusColor="IVORY" layoutX="178.0" layoutY="644.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="txtPnum" focusColor="IVORY" layoutX="178.0" layoutY="714.0" prefHeight="25.0" prefWidth="191.0" unFocusColor="IVORY">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="txtDate" focusColor="IVORY" layoutX="176.0" layoutY="481.0" prefHeight="25.0" prefWidth="185.0" unFocusColor="IVORY">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></JFXTextField>
          </children>
       </AnchorPane>
    </children>
