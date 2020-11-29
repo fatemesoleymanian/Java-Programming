@@ -61,8 +61,15 @@
             alert.showAndWait();
         } else {
             ControllInfo controllInfo=new ControllInfo();
+            if (femaleBtn.isSelected()){
+                controllInfo.fill(txtFiName.getText(),txtLname.getText(),txtFaName.getText(),txtNc.getText(),femaleBtn.getText(),txtDate.getText(),txtEdu.getText(),txtPnum.getText(),txtEmail.getText());
 
-            controllInfo.fill(txtFiName.getText(),txtLname.getText(),txtFaName.getText(),txtNc.getText(),femaleBtn.getText(),txtDate.getText(),txtEdu.getText(),txtPnum.getText(),txtEmail.getText());
+            }if (maleBtn.isSelected()){
+                controllInfo.fill(txtFiName.getText(),txtLname.getText(),txtFaName.getText(),txtNc.getText(),maleBtn.getText(),txtDate.getText(),txtEdu.getText(),txtPnum.getText(),txtEmail.getText());
+
+
+            }
+
             Stage stage = (Stage) SubBtn.getScene().getWindow();
             stage.close();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
