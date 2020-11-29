@@ -30,7 +30,7 @@
                 <Font name="System Bold Italic" size="16.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtEmail2" focusColor="DARKSLATEGRAY" labelFloat="true" layoutX="275.0" layoutY="115.0" promptText="old email address" unFocusColor="DARKSLATEGRAY">
+        <JFXTextField fx:id="txtEmail2" focusColor="DARKSLATEGRAY" labelFloat="true" layoutX="275.0" layoutY="115.0" promptText="email address" unFocusColor="DARKSLATEGRAY">
             <font>
                 <Font name="System Bold Italic" size="16.0" />
             </font>
