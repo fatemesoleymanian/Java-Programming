@@ -15,6 +15,9 @@ public class CustomerRepo implements AutoCloseable {
         {
             System.out.println("DB Driver Not Exist!!");
 
+        }catch (SQLException e) {
+            System.out.println("DB ERROR " + e.getMessage());
+
         }
     }
     public void inserting(CustomerEntity customerEntity)throws Exception{
@@ -58,6 +61,7 @@ public class CustomerRepo implements AutoCloseable {
 
         preparedStatement.setString (1,user_name);
         preparedStatement.setLong (2,password);
+       
         }  catch (SQLException e)
         {
             System.out.println("DB ERROR " + e.getMessage());
