@@ -12,7 +12,7 @@ public class Main {
 
         for (int i=1 ; i<6 ; i++)
         {
-            System.out.println("employee number" +i+1+" "+"please enter required information");
+            System.out.println("employee number" +i+" "+"please enter required information");
             System.out.println("your name :  your education :  your age :  your email address :");
             try {
                 empInfos.info(scanner.next(),scanner.next(),scanner.next(),scanner.next());
