@@ -10,7 +10,7 @@ public class Main {
         System.out.println("******* hello and welcome dear employees ! *******");
         EmpInfo<String > empInfos=Employee::insert;
 
-        for (int i=0 ; i<5 ; i++)
+        for (int i=1 ; i<6 ; i++)
         {
             System.out.println("employee number" +i+1+" "+"please enter required information");
             System.out.println("your name :  your education :  your age :  your email address :");
