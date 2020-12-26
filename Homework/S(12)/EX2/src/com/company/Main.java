@@ -21,7 +21,7 @@ public class Main {
                 File file = new File("C:\\Uni\\UniversitiesInformation.txt");
                 try {
                     FileWriter fileWriter = new FileWriter(file);
-                    fileWriter.write("gkjjk"+oxford+"\n"+harvard+"\n"+cambridge+"\n"+usc);
+                    fileWriter.write(oxford+"\n"+harvard+"\n"+cambridge+"\n"+usc);
                     fileWriter.close();
                 } catch (IOException e) {
                     e.printStackTrace ();
@@ -29,7 +29,7 @@ public class Main {
 
 
             }
-        };
+        };university.uniInfo();
         System.out.println("you can go to this path -> C:\\Uni\\UniversitiesInformation.txt  to see universities information ");
 
 
